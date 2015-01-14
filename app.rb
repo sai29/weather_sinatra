@@ -10,3 +10,7 @@ get '/:city' do
   @weather = barometer.measure
   erb :weather
 end
+
+not_found do
+  halt 404, 'page not found'
+end
