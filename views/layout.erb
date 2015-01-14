@@ -4,7 +4,7 @@
   <head>
     <title>Weather forecasting</title>
     <style type="text/css" media="screen">
-      body          {font-family: verdana; background: #F0F0F0; width: 650px; margin: auto; font-size: 12px;}
+      body          {font-family: verdana; width: 650px; margin: auto; font-size: 12px;}
       .current img  {float: left; margin-right: 20px;}
       .current h1   {font-size: 110px;}
       .clear        {clear: both}
@@ -16,11 +16,17 @@
       .search       {margin-top: 23px; margin-left: 10px;}
       .center       {text-align: center;}
       .home         {margin-left: 150px}
+          body
+    {
+    background-image:url('/img/swirl_pattern.png');
+    }
+</style>
+
     </style>
   </head>
   <body>
     <header>
-      <p><a href="/">Home</a></p>
+      <h3><a href="/">Home</a></h3>
     </header>
     <%= yield %>
     <footer>

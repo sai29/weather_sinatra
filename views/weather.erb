@@ -1,3 +1,4 @@
+<div class="container">
 <header>
   <h1>Weather for <%= @city.capitalize %></h1>
 </header>
@@ -5,3 +6,18 @@
   
   <p>The temperature at <%= @city.capitalize %> is <%= @weather.current.temperature.c %>°C</p>
 </section>
+
+<section class="forecasting">
+  <h1 class="clear">Forecasting:</h1>
+  <% @weather.forecast.each do |f| %>
+    <div class="item">
+     
+      <br />
+      <b>High</b> <%= f.high.c %>°C
+      <br>
+      <b>Low</b> <%= f.low.c %>°C
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</section>
+</div>
