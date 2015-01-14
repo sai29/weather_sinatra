@@ -1,2 +1,2 @@
 # weather_sinatra
-An app to learn Sinatra using a weather api.
+An app to learn about Sinatra and using a weather api.
