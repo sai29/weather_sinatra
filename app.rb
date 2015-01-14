@@ -1,4 +1,12 @@
 require 'sinatra'
+require "barometer"
 get '/' do
-  "Learning Ruby on Heroku"
+  erb :home
+end
+
+get '/:city' do
+  @city = params[:city]
+  barometer = Barometer.new @city
+  @weather = barometer.measure
+  erb :weather
 end
