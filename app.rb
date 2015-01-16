@@ -7,11 +7,14 @@ get '/' do
 end
 
 get '/:city' do
-	city_name = params[:city].chomp.split
-	city_name.each do |val|
-		val.capitalize!
+	city_name = params[:city].chomp
+	if city_name.length > 0
+		city_name.each do |val|
+			val.capitalize!
+		end
+		city_name = city_name.join("_")
 	end
-	city_name = city_name.join("_")
+
 	puts city_name
 	wunderground_url_current = 'http://api.wunderground.com/api/31c52a5653ebf884/geolookup/conditions/q/' + city_name + '.json'
 	open(wunderground_url_current) do |f|
