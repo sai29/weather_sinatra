@@ -4,20 +4,19 @@
 </header>
 <section class="current">
   
-  <p>The temperature at <%= @city.capitalize %> is <%= @weather.current.temperature.c %>°C</p>
-</section>
-
-<section class="forecasting">
-  <h1 class="clear">Forecasting:</h1>
-  <% @weather.forecast.each do |f| %>
+  <p>The climate in  <%= @city.capitalize %> is <%= @weather %> with the temperature at <%= @current_temp %>°C with a relative humidity of <%= @relative_humidity %>. </p>
+  <section class="forecasting">
+  <h3 class="clear">Forecasting:</h3>
+  <% @forecast_array.each do |low,high| %>
     <div class="item">
      
       <br />
-      <b>High</b> <%= f.high.c %>°C
+      <b>High</b> <%= low %>°C
       <br>
-      <b>Low</b> <%= f.low.c %>°C
+      <b>Low</b> <%= high %>°C
     </div>
   <% end %>
   <div class="clear"></div>
 </section>
-</div>
+</section>
+
